@@ -711,4 +711,111 @@
   }
 </script>
 </body>
+<!-- ================================================
+     BACK TO PORTFOLIO BUTTON
+     Paste snippet ini tepat setelah tag <body> di:
+     - food.html
+     - fashion.html
+     - index.html (demo-wa-business)
+     - index.html (demo-cafe)
+     - index.html (demo-catalog)
+     - index.html (demo-wedding)
+     ================================================ -->
+
+<style>
+.back-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(15, 15, 14, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  overflow: hidden;
+  animation: slideUp 0.6s ease forwards 1s;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.back-bar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding: 12px 16px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+
+.back-bar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.back-bar-link:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.back-bar-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.back-bar-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.08);
+}
+
+.back-bar-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  padding: 12px 14px;
+  font-size: 14px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.back-bar-close:hover { color: rgba(255,255,255,0.7); }
+</style>
+
+<div class="back-bar" id="backBar">
+  <span class="back-bar-label">Demo Project</span>
+  <a href="https://yogarizky-portfolio.vercel.app" target="_blank" class="back-bar-link">
+    <div class="back-bar-dot"></div>
+    Yoga Rizky — Portfolio
+  </a>
+  <div class="back-bar-divider"></div>
+  <button class="back-bar-close" onclick="document.getElementById('backBar').style.display='none'">✕</button>
+</div>
 </html>
